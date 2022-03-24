@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Number" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Drivers" Relationship="Self.FK_Drivers_Cities" FromRole="Cities" ToRole="Drivers" />
+    <NavigationProperty Name="Routes" Relationship="Self.FK_Routes_Cities" FromRole="Cities" ToRole="Routes" />
+    <NavigationProperty Name="Transports" Relationship="Self.FK_Transports_Cities" FromRole="Cities" ToRole="Transports" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_Cities" FromRole="Cities" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Self.FK_Drivers_Cities" FromRole="Drivers" ToRole="Cities" />
+  </EntityType>
+  <EntityType Name="ManufacrurersTransport">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ModelsTransports" Relationship="Self.FK_ModelsTransport_ManufacrurersTransport" FromRole="ManufacrurersTransport" ToRole="ModelsTransport" />
+  </EntityType>
+  <EntityType Name="ModelsTransport">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ManufacturerID" Type="Int32" Nullable="false" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountPassangers" Type="Int32" Nullable="false" />
+    <Property Name="CountDisabledPassangers" Type="Int32" Nullable="false" />
+    <Property Name="TypeTransportID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ManufacrurersTransport" Relationship="Self.FK_ModelsTransport_ManufacrurersTransport" FromRole="ModelsTransport" ToRole="ManufacrurersTransport" />
+    <NavigationProperty Name="TypesTransport" Relationship="Self.FK_ModelsTransport_TypesTransport" FromRole="ModelsTransport" ToRole="TypesTransport" />
+    <NavigationProperty Name="Transports" Relationship="Self.FK_Transports_ModelsTransport" FromRole="ModelsTransport" ToRole="Transports" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Route">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="DateStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateEnd" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Frequency" Type="Int32" Nullable="false" />
+    <Property Name="TypeRouteID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Self.FK_Routes_Cities" FromRole="Routes" ToRole="Cities" />
+    <NavigationProperty Name="TypesRoute" Relationship="Self.FK_Routes_TypesRoute" FromRole="Routes" ToRole="TypesRoute" />
+    <NavigationProperty Name="SchedulesRoutes" Relationship="Self.FK_SchedulesRoute_Routes" FromRole="Routes" ToRole="SchedulesRoute" />
+    <NavigationProperty Name="StopsInRoutes" Relationship="Self.FK_StopsInRoute_Routes" FromRole="Routes" ToRole="StopsInRoute" />
+  </EntityType>
+  <EntityType Name="SchedulesRoute">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <Property Name="IsWeekday" Type="Boolean" Nullable="false" />
+    <Property Name="TimeWork" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Route" Relationship="Self.FK_SchedulesRoute_Routes" FromRole="SchedulesRoute" ToRole="Routes" />
+  </EntityType>
+  <EntityType Name="Stop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="GeoPosition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="StopsInRoutes" Relationship="Self.FK_StopsInRoute_Stops" FromRole="Stops" ToRole="StopsInRoute" />
+  </EntityType>
+  <EntityType Name="StopsInRoute">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Position" Type="Int32" Nullable="false" />
+    <Property Name="StopID" Type="Int32" Nullable="false" />
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Route" Relationship="Self.FK_StopsInRoute_Routes" FromRole="StopsInRoute" ToRole="Routes" />
+    <NavigationProperty Name="Stop" Relationship="Self.FK_StopsInRoute_Stops" FromRole="StopsInRoute" ToRole="Stops" />
+  </EntityType>
+  <EntityType Name="Transport">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModelTransportID" Type="Int32" Nullable="false" />
+    <Property Name="ProductionYear" Type="Int32" Nullable="false" />
+    <Property Name="VIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RegistrationMark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="DriverID" Type="Int32" Nullable="false" />
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Self.FK_Transports_Cities" FromRole="Transports" ToRole="Cities" />
+    <NavigationProperty Name="ModelsTransport" Relationship="Self.FK_Transports_ModelsTransport" FromRole="Transports" ToRole="ModelsTransport" />
+  </EntityType>
+  <EntityType Name="TypesRoute">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Routes" Relationship="Self.FK_Routes_TypesRoute" FromRole="TypesRoute" ToRole="Routes" />
+  </EntityType>
+  <EntityType Name="TypesTransport">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ModelsTransports" Relationship="Self.FK_ModelsTransport_TypesTransport" FromRole="TypesTransport" ToRole="ModelsTransport" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastEnter" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Self.FK_Users_Cities" FromRole="Users" ToRole="Cities" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Drivers_Cities">
+    <End Role="Cities" Type="Self.City" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Drivers" Type="Self.Driver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Drivers">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Routes_Cities">
+    <End Role="Cities" Type="Self.City" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Routes" Type="Self.Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Routes">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transports_Cities">
+    <End Role="Cities" Type="Self.City" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Transports" Type="Self.Transport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Transports">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Cities">
+    <End Role="Cities" Type="Self.City" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModelsTransport_ManufacrurersTransport">
+    <End Role="ManufacrurersTransport" Type="Self.ManufacrurersTransport" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ModelsTransport" Type="Self.ModelsTransport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManufacrurersTransport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ModelsTransport">
+        <PropertyRef Name="ManufacturerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModelsTransport_TypesTransport">
+    <End Role="TypesTransport" Type="Self.TypesTransport" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ModelsTransport" Type="Self.ModelsTransport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypesTransport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ModelsTransport">
+        <PropertyRef Name="TypeTransportID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transports_ModelsTransport">
+    <End Role="ModelsTransport" Type="Self.ModelsTransport" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Transports" Type="Self.Transport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModelsTransport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Transports">
+        <PropertyRef Name="ModelTransportID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Role="Roles" Type="Self.Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Routes_TypesRoute">
+    <End Role="TypesRoute" Type="Self.TypesRoute" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Routes" Type="Self.Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypesRoute">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Routes">
+        <PropertyRef Name="Frequency" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SchedulesRoute_Routes">
+    <End Role="Routes" Type="Self.Route" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SchedulesRoute" Type="Self.SchedulesRoute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Routes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SchedulesRoute">
+        <PropertyRef Name="RouteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StopsInRoute_Routes">
+    <End Role="Routes" Type="Self.Route" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="StopsInRoute" Type="Self.StopsInRoute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Routes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StopsInRoute">
+        <PropertyRef Name="RouteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StopsInRoute_Stops">
+    <End Role="Stops" Type="Self.Stop" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="StopsInRoute" Type="Self.StopsInRoute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stops">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StopsInRoute">
+        <PropertyRef Name="StopID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Drivers" EntityType="Self.Driver" />
+    <EntitySet Name="ManufacrurersTransports" EntityType="Self.ManufacrurersTransport" />
+    <EntitySet Name="ModelsTransports" EntityType="Self.ModelsTransport" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Routes" EntityType="Self.Route" />
+    <EntitySet Name="SchedulesRoutes" EntityType="Self.SchedulesRoute" />
+    <EntitySet Name="Stops" EntityType="Self.Stop" />
+    <EntitySet Name="StopsInRoutes" EntityType="Self.StopsInRoute" />
+    <EntitySet Name="Transports" EntityType="Self.Transport" />
+    <EntitySet Name="TypesRoutes" EntityType="Self.TypesRoute" />
+    <EntitySet Name="TypesTransports" EntityType="Self.TypesTransport" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Drivers_Cities" Association="Self.FK_Drivers_Cities">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="Drivers" EntitySet="Drivers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Routes_Cities" Association="Self.FK_Routes_Cities">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="Routes" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transports_Cities" Association="Self.FK_Transports_Cities">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="Transports" EntitySet="Transports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Cities" Association="Self.FK_Users_Cities">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModelsTransport_ManufacrurersTransport" Association="Self.FK_ModelsTransport_ManufacrurersTransport">
+      <End Role="ManufacrurersTransport" EntitySet="ManufacrurersTransports" />
+      <End Role="ModelsTransport" EntitySet="ModelsTransports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModelsTransport_TypesTransport" Association="Self.FK_ModelsTransport_TypesTransport">
+      <End Role="TypesTransport" EntitySet="TypesTransports" />
+      <End Role="ModelsTransport" EntitySet="ModelsTransports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transports_ModelsTransport" Association="Self.FK_Transports_ModelsTransport">
+      <End Role="ModelsTransport" EntitySet="ModelsTransports" />
+      <End Role="Transports" EntitySet="Transports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Routes_TypesRoute" Association="Self.FK_Routes_TypesRoute">
+      <End Role="TypesRoute" EntitySet="TypesRoutes" />
+      <End Role="Routes" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SchedulesRoute_Routes" Association="Self.FK_SchedulesRoute_Routes">
+      <End Role="Routes" EntitySet="Routes" />
+      <End Role="SchedulesRoute" EntitySet="SchedulesRoutes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StopsInRoute_Routes" Association="Self.FK_StopsInRoute_Routes">
+      <End Role="Routes" EntitySet="Routes" />
+      <End Role="StopsInRoute" EntitySet="StopsInRoutes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StopsInRoute_Stops" Association="Self.FK_StopsInRoute_Stops">
+      <End Role="Stops" EntitySet="Stops" />
+      <End Role="StopsInRoute" EntitySet="StopsInRoutes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

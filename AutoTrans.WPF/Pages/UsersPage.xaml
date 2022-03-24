@@ -13,9 +13,19 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <DataGrid>
+        <DataGrid x:Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Width="150" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Имя" Width="100" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="Отчество" Width="125" Binding="{Binding MiddleName, TargetNullValue=Отсутствует}"/>
+                <DataGridTextColumn Header="Логин" Width="100" Binding="{Binding Login}"/>
+                <DataGridTemplateColumn Header="Изменить пользователя" Width="175">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnGoToUser" Content="Изменить пользователя" Click="btnGoToUser_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

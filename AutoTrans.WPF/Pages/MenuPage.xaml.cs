@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoTrans.WPF.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace AutoTrans.WPF.Pages
         public MenuPage()
         {
             InitializeComponent();
+        }
+
+        private void btnUsers_Click(object sender, RoutedEventArgs e)
+        {
+            Global.MainFrame.Navigate(new Pages.UsersPage());
         }
     }
 }

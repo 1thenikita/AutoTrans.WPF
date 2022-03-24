@@ -21,3 +21,34 @@ C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debu
 C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\MenuPage.g.cs
 C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\App.baml
 C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\MenuPage.baml
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF.csproj.AssemblyReference.cache
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF.csproj.SuggestedBindingRedirects.cache
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\MainWindow.g.cs
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\AuthPage.g.cs
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\MenuPage.g.cs
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\UsersPage.g.cs
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\App.g.cs
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF_Content.g.cs
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF_MarkupCompile.cache
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF_MarkupCompile.lref
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF.exe
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF.pdb
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\AutoTrans.WPF.exe.config
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\AutoTrans.WPF.exe
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\AutoTrans.WPF.pdb
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\EntityFramework.dll
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\EntityFramework.SqlServer.dll
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\EntityFramework.xml
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\EntityFramework.SqlServer.xml
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\App.baml
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\MainWindow.baml
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\AuthPage.baml
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\MenuPage.baml
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\UsersPage.baml
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF.g.resources
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF.Properties.Resources.resources
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF.csproj.GenerateResource.cache
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF.csproj.CopyComplete
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\UserPage.g.cs
+\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\UserPage.baml

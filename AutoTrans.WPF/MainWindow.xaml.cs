@@ -27,6 +27,16 @@ namespace AutoTrans.WPF
             InitializeComponent();
             Global.MainFrame = frameMain;
             Global.MainFrame.Navigate(new AuthPage());
+
+            try
+            {
+                Global.DB = new Entities.DBEntities();
+            }
+            catch(Exception exp)
+            {
+                MessageBox.Show("Критическая ошибка.\n\n" + exp.Message, "Ошибка Базы Данных.", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
+            }
         }
 
         /// <summary>
@@ -36,7 +46,37 @@ namespace AutoTrans.WPF
         /// <param name="e"></param>
         private void frameMain_ContentRendered(object sender, EventArgs e)
         {
-            lblTitle.Content = (frameMain.Content as Page).Title;
+            var title = (frameMain.Content as Page).Title;
+            lblTitle.Content = title;
+
+            if(title == "Аутентификация")
+            {
+                Global.MyUser = null;
+                gridUserData.Visibility = Visibility.Hidden;
+            }
+            else if (title == "Главное меню")
+            {
+                lblUserFullName.Content = "Здравствуйте, " + Global.MyUser.LastName + " " + Global.MyUser.FirstName + " " + Global.MyUser.MiddleName;
+                gridUserData.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                gridUserData.Visibility = Visibility.Hidden;
+            }
+        }
+
+        /// <summary>
+        /// Обработчик кнопки выхода из аккаунта.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Global.MainFrame.CanGoBack) return;
+
+            Global.MainFrame.RemoveBackEntry();
+            Global.MainFrame.Navigate(new AuthPage());
+            Global.MyUser = null;
         }
     }
 }

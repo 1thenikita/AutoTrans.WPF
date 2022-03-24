@@ -14,5 +14,14 @@
         </Grid.RowDefinitions>
         <Label x:Name="lblTitle" Content="Заголовок" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"></Label>
         <Frame x:Name="frameMain" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="frameMain_ContentRendered"></Frame>
+        <Grid x:Name="gridUserData" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="lblUserFullName" VerticalAlignment="Center" Content="Здравствуйте, ..."></Label>
+            <Button x:Name="btnExit" Content="Выйти" Grid.Column="1" Click="btnExit_Click"></Button>
+        </Grid>
     </Grid>
 </Window>

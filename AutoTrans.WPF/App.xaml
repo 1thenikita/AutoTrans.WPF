@@ -19,5 +19,9 @@
             <Setter Property="Height" Value="20"/>
             <Setter Property="Width" Value="125"/>
         </Style>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
     </Application.Resources>
 </Application>

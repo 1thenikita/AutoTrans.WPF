@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoTrans.WPF.Classes;
+using AutoTrans.WPF.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,14 @@ namespace AutoTrans.WPF.Pages
         public UsersPage()
         {
             InitializeComponent();
+            dgUsers.ItemsSource = Global.DB.Users.ToList();
+        }
+
+        private void btnGoToUser_Click(object sender, RoutedEventArgs e)
+        {
+            var user = sender as User;
+
+
         }
     }
 }

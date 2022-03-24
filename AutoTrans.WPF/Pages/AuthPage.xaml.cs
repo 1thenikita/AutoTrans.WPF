@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoTrans.WPF.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,7 +41,18 @@ namespace AutoTrans.WPF.Pages
             var login = tbLogin.Text;
             var password = pbPassword.Password;
 
-            
+            Global.MyUser = Global.DB.Users.FirstOrDefault(_u => _u.Login == login && _u.Password == password);
+
+            if(Global.MyUser == null)
+            {
+                MessageBox.Show("Пользователь не найден.\nПроверьте ввод данных.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            Global.MyUser.LastEnter = DateTime.Now;
+            Global.DB.SaveChanges();
+
+            Global.MainFrame.Navigate(new Pages.MenuPage());
         }
     }
 }

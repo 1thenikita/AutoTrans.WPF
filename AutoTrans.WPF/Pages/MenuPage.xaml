@@ -20,6 +20,6 @@
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Content="Выберите нужный пункт меню"></Label>
-        <Button x:Name="btnUsers" Grid.Row="1" Content="Пользователи"></Button>
+        <Button x:Name="btnUsers" Grid.Row="1" Content="Пользователи" Click="btnUsers_Click"></Button>
     </Grid>
 </Page>
