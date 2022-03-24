@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoTrans.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Пассажиравтотранс" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Label x:Name="lblTitle" Content="Заголовок" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"></Label>
-        <Frame x:Name="frameMain" NavigationUIVisibility="Hidden" ContentRendered="frameMain_ContentRendered"></Frame>
+        <Label x:Name="lblTitle" Content="Заголовок" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"></Label>
+        <Frame x:Name="frameMain" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="frameMain_ContentRendered"></Frame>
     </Grid>
 </Window>

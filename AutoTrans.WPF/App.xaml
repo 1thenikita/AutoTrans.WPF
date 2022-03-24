@@ -4,6 +4,20 @@
              xmlns:local="clr-namespace:AutoTrans.WPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="125"/>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="125"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="125"/>
+        </Style>
     </Application.Resources>
 </Application>

@@ -20,9 +20,27 @@ namespace AutoTrans.WPF.Pages
     /// </summary>
     public partial class AuthPage : Page
     {
+        /// <summary>
+        /// Инициализация класса.
+        /// </summary>
         public AuthPage()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Обработчик начала аутентификации.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(tbLogin.Text) || String.IsNullOrWhiteSpace(pbPassword.Password)) return;
+
+            var login = tbLogin.Text;
+            var password = pbPassword.Password;
+
+            
         }
     }
 }
