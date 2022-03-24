@@ -30,9 +30,10 @@ namespace AutoTrans.WPF.Pages
 
         private void btnGoToUser_Click(object sender, RoutedEventArgs e)
         {
-            var user = sender as User;
+            var user = (sender as Button).DataContext as User;
 
-
+            if (user == null) return;
+            Global.MainFrame.Navigate(new UserPage(user));
         }
     }
 }
