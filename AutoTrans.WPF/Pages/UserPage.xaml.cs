@@ -1,4 +1,5 @@
-﻿using AutoTrans.WPF.Entities;
+﻿using AutoTrans.WPF.Classes;
+using AutoTrans.DB.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,18 +24,68 @@ namespace AutoTrans.WPF.Pages
     {
         User currentUser;
 
+        /// <summary>
+        /// Обработчик добавления сотрудника.
+        /// </summary>
         public UserPage()
         {
             InitializeComponent();
-            Title = "Создание пользователя";
+            Title = "Добавление сотрудника";
             currentUser = new User();
+
+            cbRole.ItemsSource = Global.DB.Roles.ToList();
+            cbCity.ItemsSource = Global.DB.Cities.ToList();
+            DataContext = currentUser;
         }
+
+        /// <summary>
+        /// Обработчик изменения сотрудника.
+        /// </summary>
+        /// <param name="user"></param>
         public UserPage(User user)
         {
             InitializeComponent();
-            Title = "Создание пользователя";
+            Title = "Изменение сотрудника";
+            cbRole.ItemsSource = Global.DB.Roles.ToList();
+            cbCity.ItemsSource = Global.DB.Cities.ToList();
             currentUser = user;
             DataContext = currentUser;
+
+            pbPassword.Password = currentUser.Password;
+        }
+
+        /// <summary>
+        /// Обработчик сохранения изменений.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            StringBuilder errors = new StringBuilder();
+
+            if (String.IsNullOrWhiteSpace(tbFirstName.Text))
+                errors.AppendLine("Заполните имя.");
+            if (String.IsNullOrWhiteSpace(tbLastName.Text))
+                errors.AppendLine("Заполните фамилию.");
+            if (String.IsNullOrWhiteSpace(tbLogin.Text))
+                errors.AppendLine("Заполните логин.");
+            if (String.IsNullOrWhiteSpace(tbGender.Text) || tbGender.Text.Length > 1)
+                errors.AppendLine("Заполните пол (1 символ).");
+            if (String.IsNullOrWhiteSpace(pbPassword.Password))
+                errors.AppendLine("Заполните пароль.");
+
+            currentUser.Password = pbPassword.Password;
+
+            if(currentUser.ID == 0)
+                Global.DB.Users.Add(currentUser);
+
+            if(errors.Length != 0)
+            {
+                MessageBox.Show("Проверьте поля.\n" + errors, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            Global.DB.SaveChanges();
         }
     }
 }

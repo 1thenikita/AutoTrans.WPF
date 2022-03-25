@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "13cc211a-0851-4edf-a29b-aff010a5c9b3": {
+      "ProjectGuid": "13cc211a-0851-4edf-a29b-aff010a5c9b3",
+      "DisplayName": "AutoTrans.WPF",
+      "ColorIndex": 0
+    },
+    "0de76b8d-787f-4abe-89e2-c673167762f2": {
+      "ProjectGuid": "0de76b8d-787f-4abe-89e2-c673167762f2",
+      "DisplayName": "AutoTrans.DB",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

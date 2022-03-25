@@ -14,15 +14,32 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="Фамилия"/>
-        <TextBox x:Name="tbLastName" Text="{Binding LastName}" Grid.Column="1"/>
-
-
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Content="Фамилия"/>
+        <TextBox x:Name="tbLastName" Text="{Binding LastName}" Grid.Row="0" Grid.Column="1"/>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Content="Имя"></Label>
+        <TextBox x:Name="tbFirstName" Text="{Binding FirstName}" Grid.Row="1" Grid.Column="1"/>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Content="Отчество"></Label>
+        <TextBox x:Name="tbMiddleName" Text="{Binding MiddleName}" Grid.Row="2" Grid.Column="1"/>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Content="Логин"></Label>
+        <TextBox x:Name="tbLogin" Text="{Binding Login}" Grid.Row="3" Grid.Column="1"/>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Content="Пароль"></Label>
+        <PasswordBox x:Name="pbPassword" Grid.Row="4" Grid.Column="1"/>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="5" Content="Пол"></Label>
+        <TextBox x:Name="tbGender" Text="{Binding Gender, StringFormat=\{0\}}" Grid.Row="5" Grid.Column="1"/>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6" Content="Роль"></Label>
+        <ComboBox x:Name="cbRole" DisplayMemberPath="Name" SelectedItem="{Binding Role}" Grid.Row="6" Grid.Column="1"/>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="7" Content="Город"></Label>
+        <ComboBox x:Name="cbCity" DisplayMemberPath="Name" SelectedItem="{Binding City}" Grid.Row="7" Grid.Column="1"/>
+        <Button x:Name="btnSave" Grid.Row="8" Grid.ColumnSpan="2" Content="Сохранить данные" Click="btnSave_Click"/>
     </Grid>
 </Page>

@@ -52,3 +52,22 @@ C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debu
 \\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF.csproj.CopyComplete
 \\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\UserPage.g.cs
 \\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\UserPage.baml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\EntityFramework.dll
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\EntityFramework.xml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\UserPage.g.cs
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\UserPage.baml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\AutoTrans.WPF.csproj.CopyComplete
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\DriverPage.g.cs
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\DriversPage.g.cs
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\AutoTrans.DB.dll
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\AutoTrans.DB.pdb
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\AutoTrans.DB.dll.config
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\DriverPage.baml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\DriversPage.baml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\TransportsPage.g.cs
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\TransportsPage.baml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\TransportPage.g.cs
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\TransportPage.baml

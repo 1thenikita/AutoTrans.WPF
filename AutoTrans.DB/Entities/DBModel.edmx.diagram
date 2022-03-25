@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0f9ad87576404b17a58153ec0c3e08d5" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.City" Width="1.5" PointX="0.75" PointY="8.375" />
+        <EntityTypeShape EntityType="DBModel.Driver" Width="1.5" PointX="3" PointY="20.25" />
+        <EntityTypeShape EntityType="DBModel.Manufacrurer" Width="1.5" PointX="1.5" PointY="16.5" />
+        <EntityTypeShape EntityType="DBModel.Model" Width="1.5" PointX="0.75" PointY="12.25" />
+        <EntityTypeShape EntityType="DBModel.Role" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DBModel.Route" Width="1.5" PointX="6" PointY="8" />
+        <EntityTypeShape EntityType="DBModel.SchedulesRoute" Width="1.5" PointX="8.25" PointY="11.5" />
+        <EntityTypeShape EntityType="DBModel.Stop" Width="1.5" PointX="6" PointY="4.5" />
+        <EntityTypeShape EntityType="DBModel.StopsInRoute" Width="1.5" PointX="8.25" PointY="8.5" />
+        <EntityTypeShape EntityType="DBModel.Transport" Width="1.5" PointX="3" PointY="8.125" />
+        <EntityTypeShape EntityType="DBModel.TypesRoute" Width="1.5" PointX="3.75" PointY="12.875" />
+        <EntityTypeShape EntityType="DBModel.TypesTransport" Width="1.5" PointX="1.5" PointY="23.875" />
+        <EntityTypeShape EntityType="DBModel.User" Width="1.5" PointX="3" PointY="3.875" />
+        <AssociationConnector Association="DBModel.FK_Drivers_Cities" />
+        <AssociationConnector Association="DBModel.FK_Routes_Cities" />
+        <AssociationConnector Association="DBModel.FK_Transports_Cities" />
+        <AssociationConnector Association="DBModel.FK_Users_Cities" />
+        <AssociationConnector Association="DBModel.FK_ModelsTransport_ManufacrurersTransport" />
+        <AssociationConnector Association="DBModel.FK_ModelsTransport_TypesTransport" />
+        <AssociationConnector Association="DBModel.FK_Transports_ModelsTransport" />
+        <AssociationConnector Association="DBModel.FK_Users_Roles" />
+        <AssociationConnector Association="DBModel.FK_Routes_TypesRoute" />
+        <AssociationConnector Association="DBModel.FK_SchedulesRoute_Routes" />
+        <AssociationConnector Association="DBModel.FK_StopsInRoute_Routes" />
+        <AssociationConnector Association="DBModel.FK_StopsInRoute_Stops" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -9,6 +9,11 @@
             <Setter Property="Height" Value="20"/>
             <Setter Property="Width" Value="125"/>
         </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="125"/>
+        </Style>
         <Style TargetType="PasswordBox">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Height" Value="20"/>

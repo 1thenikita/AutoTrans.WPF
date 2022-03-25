@@ -5,16 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoTrans.WPF"
         mc:Ignorable="d"
-        Title="Пассажиравтотранс" Height="450" Width="800">
+        Title="Пассажиравтотранс" Height="750" Width="900"
+        Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Label x:Name="lblTitle" Content="Заголовок" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"></Label>
+        <Label x:Name="lblTitle" Content="Заголовок" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <Button x:Name="btnGoBack" Content="Назад" HorizontalAlignment="Right" Click="btnGoBack_Click"/>
         <Frame x:Name="frameMain" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="frameMain_ContentRendered"></Frame>
-        <Grid x:Name="gridUserData" Grid.Row="2">
+        <Grid x:Name="gridUserData" Grid.Row="2" Visibility="Hidden">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="150"></ColumnDefinition>

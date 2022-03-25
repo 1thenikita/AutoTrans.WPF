@@ -124,8 +124,8 @@
     <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Gender" Type="char" MaxLength="1" Nullable="false" />
-    <Property Name="IPAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="LastEnter" Type="datetime" Nullable="false" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastEnter" Type="datetime" />
     <Property Name="RoleID" Type="int" Nullable="false" />
     <Property Name="CityID" Type="int" Nullable="false" />
   </EntityType>

@@ -11,10 +11,10 @@
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel Orientation="Vertical" Margin="5">
             <Label HorizontalAlignment="Left" Content="Логин"></Label>
-            <TextBox x:Name="tbLogin"></TextBox>
+            <TextBox x:Name="tbLogin" KeyUp="tbLogin_KeyUp"/>
             <Label HorizontalAlignment="Left" Content="Пароль"></Label>
-            <PasswordBox x:Name="pbPassword"/>
-            <Button x:Name="btnLogin" Content="Войти" Click="btnLogin_Click"></Button>
+            <PasswordBox x:Name="pbPassword" KeyUp="pbPassword_KeyUp"/>
+            <Button x:Name="btnLogin" Content="Войти" Click="btnLogin_Click" IsDefault="True"></Button>
         </StackPanel>
     </Grid>
 </Page>

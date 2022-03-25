@@ -1,0 +1,12 @@
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\bin\Debug\AutoTrans.DB.dll.config
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\bin\Debug\AutoTrans.DB.dll
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\bin\Debug\AutoTrans.DB.pdb
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\bin\Debug\EntityFramework.dll
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\bin\Debug\EntityFramework.xml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\obj\Debug\AutoTrans.DB.csproj.CoreCompileInputs.cache
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\obj\Debug\AutoTrans.DB.csproj.CopyComplete
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\obj\Debug\AutoTrans.DB.dll
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\obj\Debug\AutoTrans.DB.pdb

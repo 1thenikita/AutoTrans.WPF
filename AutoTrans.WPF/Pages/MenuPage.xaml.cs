@@ -21,14 +21,42 @@ namespace AutoTrans.WPF.Pages
     /// </summary>
     public partial class MenuPage : Page
     {
+        /// <summary>
+        /// Инициализация класса.
+        /// </summary>
         public MenuPage()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Обработчик просмотра сотрудников.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUsers_Click(object sender, RoutedEventArgs e)
         {
             Global.MainFrame.Navigate(new Pages.UsersPage());
+        }
+
+        /// <summary>
+        /// Обработчик просмотра водителей.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDrivers_Click(object sender, RoutedEventArgs e)
+        {
+            Global.MainFrame.Navigate(new Pages.DriversPage());
+        }
+
+        /// <summary>
+        /// Обработчик просмотра транспорта.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnTransports_Click(object sender, RoutedEventArgs e)
+        {
+            Global.MainFrame.Navigate(new Pages.TransportsPage());
         }
     }
 }

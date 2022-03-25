@@ -54,5 +54,22 @@ namespace AutoTrans.WPF.Pages
 
             Global.MainFrame.Navigate(new Pages.MenuPage());
         }
+
+        /// <summary>
+        /// Обработчик перехода от логина к паролю.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tbLogin_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+                pbPassword.Focus();
+        }
+
+        private void pbPassword_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                btnLogin_Click(null, null);
+        }
     }
 }

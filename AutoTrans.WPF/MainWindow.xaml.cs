@@ -27,16 +27,6 @@ namespace AutoTrans.WPF
             InitializeComponent();
             Global.MainFrame = frameMain;
             Global.MainFrame.Navigate(new AuthPage());
-
-            try
-            {
-                Global.DB = new Entities.DBEntities();
-            }
-            catch(Exception exp)
-            {
-                MessageBox.Show("Критическая ошибка.\n\n" + exp.Message, "Ошибка Базы Данных.", MessageBoxButton.OK, MessageBoxImage.Error);
-                this.Close();
-            }
         }
 
         /// <summary>
@@ -61,8 +51,10 @@ namespace AutoTrans.WPF
             }
             else
             {
-                gridUserData.Visibility = Visibility.Hidden;
+                gridUserData.Visibility = Visibility.Visible;
             }
+
+            btnGoBack.Visibility = Global.MainFrame.CanGoBack ? Visibility.Visible : Visibility.Collapsed;
         }
 
         /// <summary>
@@ -77,6 +69,30 @@ namespace AutoTrans.WPF
             Global.MainFrame.RemoveBackEntry();
             Global.MainFrame.Navigate(new AuthPage());
             Global.MyUser = null;
+        }
+
+        /// <summary>
+        /// Обработчик возврата на прошлую страницу.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (Global.MainFrame.CanGoBack)
+                Global.MainFrame.GoBack();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Global.DB = new AutoTrans.DB.Entities.DBEntities();
+            }
+            catch(Exception exp)
+            {
+                MessageBox.Show("Критическая ошибка.\n\n" + exp.Message, "Ошибка Базы Данных.", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
+            }
         }
     }
 }

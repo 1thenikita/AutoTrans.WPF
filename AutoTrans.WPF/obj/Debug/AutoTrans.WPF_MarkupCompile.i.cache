@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\
 AutoTrans.WPF
 none
 false
 DEBUG;TRACE
-\\Mac\Home\Documents\Work\GitHub\AutoTrans.WPF\AutoTrans.WPF\App.xaml
-5-821547675
-2-446466553
-27-1658590084
-18-301979201
-MainWindow.xaml;Pages\AuthPage.xaml;Pages\MenuPage.xaml;Pages\UserPage.xaml;Pages\UsersPage.xaml;
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\App.xaml
+91973435063
+
+15-1220349187
+19-1511985212
+MainWindow.xaml;Pages\AuthPage.xaml;Pages\DriverPage.xaml;Pages\DriversPage.xaml;Pages\MenuPage.xaml;Pages\TransportPage.xaml;Pages\TransportsPage.xaml;Pages\UserPage.xaml;Pages\UsersPage.xaml;
 
 True
 

@@ -1,4 +1,4 @@
-﻿using AutoTrans.WPF.Entities;
+﻿using AutoTrans.DB.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

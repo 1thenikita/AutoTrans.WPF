@@ -20,6 +20,8 @@
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Content="Выберите нужный пункт меню"></Label>
-        <Button x:Name="btnUsers" Grid.Row="1" Content="Пользователи" Click="btnUsers_Click"></Button>
+        <Button x:Name="btnUsers" Grid.Row="1" Content="Сотрудники" Click="btnUsers_Click"></Button>
+        <Button x:Name="btnDrivers" Grid.Row="2" Content="Водители" Click="btnDrivers_Click"></Button>
+        <Button x:Name="btnTransports" Grid.Row="3" Content="Транспорты" Click="btnTransports_Click"></Button>
     </Grid>
 </Page>
