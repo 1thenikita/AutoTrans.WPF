@@ -71,3 +71,7 @@ C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debu
 C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\TransportsPage.baml
 C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\TransportPage.g.cs
 C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\TransportPage.baml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\RoutesPage.g.cs
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\RoutesPage.baml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\AutoTrans.WPF.xml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\AutoTrans.DB.xml

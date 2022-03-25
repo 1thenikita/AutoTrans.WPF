@@ -58,5 +58,15 @@ namespace AutoTrans.WPF.Pages
         {
             Global.MainFrame.Navigate(new Pages.TransportsPage());
         }
+
+        /// <summary>
+        /// Обработчик просмотра маршрутов.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRoutes_Click(object sender, RoutedEventArgs e)
+        {
+            Global.MainFrame.Navigate(new Pages.RoutesPage());
+        }
     }
 }
