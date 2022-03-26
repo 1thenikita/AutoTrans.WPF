@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoTrans.WPF.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +21,21 @@ namespace AutoTrans.WPF.Pages
     /// </summary>
     public partial class RoutesPage : Page
     {
+        /// <summary>
+        /// Инициализация класса.
+        /// </summary>
         public RoutesPage()
         {
             InitializeComponent();
+
+            dgRoutes.ItemsSource = Global.DB.Routes.ToList();
         }
 
+        /// <summary>
+        /// Обработчик изменения маршрута.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGoToRoute_Click(object sender, RoutedEventArgs e)
         {
 

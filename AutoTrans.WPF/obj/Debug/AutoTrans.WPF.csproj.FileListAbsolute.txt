@@ -75,3 +75,7 @@ C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debu
 C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\RoutesPage.baml
 C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\AutoTrans.WPF.xml
 C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\bin\Debug\AutoTrans.DB.xml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\StopPage.g.cs
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\StopsPage.g.cs
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\StopPage.baml
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\Pages\StopsPage.baml

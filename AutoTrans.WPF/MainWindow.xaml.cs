@@ -38,11 +38,13 @@ namespace AutoTrans.WPF
         {
             var title = (frameMain.Content as Page).Title;
             lblTitle.Content = title;
+            btnGoBack.Visibility = Global.MainFrame.CanGoBack ? Visibility.Visible : Visibility.Collapsed;
 
-            if(title == "Аутентификация")
+            if (title == "Аутентификация")
             {
                 Global.MyUser = null;
                 gridUserData.Visibility = Visibility.Hidden;
+                btnGoBack.Visibility = Visibility.Hidden;
             }
             else if (title == "Главное меню")
             {
@@ -54,7 +56,6 @@ namespace AutoTrans.WPF
                 gridUserData.Visibility = Visibility.Visible;
             }
 
-            btnGoBack.Visibility = Global.MainFrame.CanGoBack ? Visibility.Visible : Visibility.Collapsed;
         }
 
         /// <summary>
@@ -64,11 +65,10 @@ namespace AutoTrans.WPF
         /// <param name="e"></param>
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            if (!Global.MainFrame.CanGoBack) return;
-
             Global.MainFrame.RemoveBackEntry();
             Global.MainFrame.Navigate(new AuthPage());
             Global.MyUser = null;
+            btnGoBack.Visibility = Visibility.Hidden;
         }
 
         /// <summary>
@@ -82,6 +82,11 @@ namespace AutoTrans.WPF
                 Global.MainFrame.GoBack();
         }
 
+        /// <summary>
+        /// Инициализация окна.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try

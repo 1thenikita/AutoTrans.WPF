@@ -51,6 +51,13 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:AutoTrans.WPF.MainWindow.Window_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Инициализация окна.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoTrans.WPF.MainWindow.InitializeComponent">
             <summary>
             InitializeComponent
@@ -199,6 +206,13 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:AutoTrans.WPF.Pages.MenuPage.btnStops_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик просмотра остановок.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoTrans.WPF.Pages.MenuPage.InitializeComponent">
             <summary>
             InitializeComponent
@@ -212,7 +226,89 @@
             RoutesPage
             </summary>
         </member>
+        <member name="M:AutoTrans.WPF.Pages.RoutesPage.#ctor">
+            <summary>
+            Инициализация класса.
+            </summary>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.RoutesPage.btnGoToRoute_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик изменения маршрута.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoTrans.WPF.Pages.RoutesPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoTrans.WPF.Pages.StopPage">
+            <summary>
+            Логика взаимодействия для StopPage.xaml
+            </summary>
+            <summary>
+            StopPage
+            </summary>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopPage.#ctor">
+            <summary>
+            Инициализация класса.
+            </summary>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopPage.#ctor(AutoTrans.DB.Entities.Stop)">
+            <summary>
+            Инициализация класса для изменения остановки.
+            </summary>
+            <param name="stop">Остановка</param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopPage.btnSave_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик сохранения остановки.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoTrans.WPF.Pages.StopsPage">
+            <summary>
+            Логика взаимодействия для StopsPage.xaml
+            </summary>
+            <summary>
+            StopsPage
+            </summary>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsPage.#ctor">
+            <summary>
+            Инициализация класса.
+            </summary>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsPage.btnGoToStop_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик изменения остановки.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsPage.btnAddStop_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик добавления остановки.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsPage.btnDeleteStop_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик удаления остановки.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsPage.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
