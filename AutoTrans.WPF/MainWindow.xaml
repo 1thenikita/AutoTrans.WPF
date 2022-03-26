@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoTrans.WPF"
         mc:Ignorable="d"
-        Title="Пассажиравтотранс" Height="750" Width="900"
+        Title="Пассажиравтотранс" Height="750" Width="1000"
         Loaded="Window_Loaded"
         MinHeight="750" MinWidth="1000">
     <Grid>

@@ -28,5 +28,6 @@ namespace AutoTrans.DB.Entities
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StopsInRoute> StopsInRoutes { get; set; }
+        public virtual City City { get; set; }
     }
 }

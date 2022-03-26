@@ -160,6 +160,13 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:AutoTrans.WPF.Pages.DriversPage.Page_IsVisibleChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обработчик обновления даннных.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoTrans.WPF.Pages.DriversPage.InitializeComponent">
             <summary>
             InitializeComponent
@@ -308,6 +315,13 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsPage.Page_IsVisibleChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обработчик обновления данных.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoTrans.WPF.Pages.StopsPage.InitializeComponent">
             <summary>
             InitializeComponent
@@ -399,9 +413,23 @@
             Инициализация класса.
             </summary>
         </member>
+        <member name="M:AutoTrans.WPF.Pages.TransportsPage.btnGoToTransport_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик изменения транспорта.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoTrans.WPF.Pages.TransportsPage.btnAddTransport_Click(System.Object,System.Windows.RoutedEventArgs)">
             <summary>
             Обработчик добавления транспорта.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.TransportsPage.Page_IsVisibleChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обработчик обновления данных.
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
@@ -472,6 +500,13 @@
         <member name="M:AutoTrans.WPF.Pages.UsersPage.btnAddUser_Click(System.Object,System.Windows.RoutedEventArgs)">
             <summary>
             Обработчик добавления сотрудника.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.UsersPage.Page_IsVisibleChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обработчик обновления данных.
             </summary>
             <param name="sender"></param>
             <param name="e"></param>

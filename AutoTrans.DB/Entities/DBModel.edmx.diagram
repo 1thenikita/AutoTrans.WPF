@@ -4,32 +4,33 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0f9ad87576404b17a58153ec0c3e08d5" Name="Diagram1">
-        <EntityTypeShape EntityType="DBModel.City" Width="1.5" PointX="0.75" PointY="8.375" />
-        <EntityTypeShape EntityType="DBModel.Driver" Width="1.5" PointX="3" PointY="20.25" />
-        <EntityTypeShape EntityType="DBModel.Manufacrurer" Width="1.5" PointX="1.5" PointY="16.5" />
-        <EntityTypeShape EntityType="DBModel.Model" Width="1.5" PointX="0.75" PointY="12.25" />
-        <EntityTypeShape EntityType="DBModel.Role" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="DBModel.Route" Width="1.5" PointX="6" PointY="8" />
-        <EntityTypeShape EntityType="DBModel.SchedulesRoute" Width="1.5" PointX="8.25" PointY="11.5" />
-        <EntityTypeShape EntityType="DBModel.Stop" Width="1.5" PointX="6" PointY="4.5" />
-        <EntityTypeShape EntityType="DBModel.StopsInRoute" Width="1.5" PointX="8.25" PointY="8.5" />
-        <EntityTypeShape EntityType="DBModel.Transport" Width="1.5" PointX="3" PointY="8.125" />
-        <EntityTypeShape EntityType="DBModel.TypesRoute" Width="1.5" PointX="3.75" PointY="12.875" />
-        <EntityTypeShape EntityType="DBModel.TypesTransport" Width="1.5" PointX="1.5" PointY="23.875" />
-        <EntityTypeShape EntityType="DBModel.User" Width="1.5" PointX="3" PointY="3.875" />
-        <AssociationConnector Association="DBModel.FK_Drivers_Cities" />
-        <AssociationConnector Association="DBModel.FK_Routes_Cities" />
-        <AssociationConnector Association="DBModel.FK_Transports_Cities" />
-        <AssociationConnector Association="DBModel.FK_Users_Cities" />
-        <AssociationConnector Association="DBModel.FK_ModelsTransport_ManufacrurersTransport" />
-        <AssociationConnector Association="DBModel.FK_ModelsTransport_TypesTransport" />
-        <AssociationConnector Association="DBModel.FK_Transports_ModelsTransport" />
-        <AssociationConnector Association="DBModel.FK_Users_Roles" />
-        <AssociationConnector Association="DBModel.FK_Routes_TypesRoute" />
-        <AssociationConnector Association="DBModel.FK_SchedulesRoute_Routes" />
-        <AssociationConnector Association="DBModel.FK_StopsInRoute_Routes" />
-        <AssociationConnector Association="DBModel.FK_StopsInRoute_Stops" />
+      <Diagram DiagramId="715014d5483c47db88842a10f7422b70" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.City" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Driver" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Manufacrurer" Width="1.5" PointX="1.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Model" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Role" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Route" Width="1.5" PointX="6" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.SchedulesRoute" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Stop" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.StopsInRoute" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Transport" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.TypesRoute" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.TypesTransport" Width="1.5" PointX="1.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.User" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FK_Drivers_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Routes_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Transports_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Users_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_ModelsTransport_ManufacrurersTransport" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_ModelsTransport_TypesTransport" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Transports_ModelsTransport" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Routes_TypesRoute" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_SchedulesRoute_Routes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_StopsInRoute_Routes" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_StopsInRoute_Stops" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Stops_Cities" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

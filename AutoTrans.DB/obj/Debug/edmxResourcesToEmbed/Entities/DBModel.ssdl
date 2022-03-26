@@ -213,6 +213,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Stops_Cities">
+    <End Role="Cities" Type="Self.Cities" Multiplicity="1" />
+    <End Role="Stops" Type="Self.Stops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Stops">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_StopsInRoute_Routes">
     <End Role="Routes" Type="Self.Routes" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -334,6 +346,10 @@
     <AssociationSet Name="FK_SchedulesRoute_Routes" Association="Self.FK_SchedulesRoute_Routes">
       <End Role="Routes" EntitySet="Routes" />
       <End Role="SchedulesRoute" EntitySet="SchedulesRoute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stops_Cities" Association="Self.FK_Stops_Cities">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="Stops" EntitySet="Stops" />
     </AssociationSet>
     <AssociationSet Name="FK_StopsInRoute_Routes" Association="Self.FK_StopsInRoute_Routes">
       <End Role="Routes" EntitySet="Routes" />
