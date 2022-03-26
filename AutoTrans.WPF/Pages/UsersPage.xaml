@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:AutoTrans.WPF.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="900"
-      Title="Сотрудники">
+      Title="Сотрудники"
+      IsVisibleChanged="Page_IsVisibleChanged">
     
     <Grid>
         <Grid.RowDefinitions>

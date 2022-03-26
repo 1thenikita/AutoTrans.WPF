@@ -23,7 +23,7 @@
         <Button x:Name="btnUsers" Grid.Row="1" Content="Сотрудники" Click="btnUsers_Click"></Button>
         <Button x:Name="btnDrivers" Grid.Row="2" Content="Водители" Click="btnDrivers_Click"></Button>
         <Button x:Name="btnTransports" Grid.Row="3" Content="Транспорты" Click="btnTransports_Click"></Button>
-        <Button x:Name="btnRoutes" Grid.Row="3" Content="Маршруты" Click="btnRoutes_Click"></Button>
-        <Button x:Name="btnStops" Grid.Row="4" Content="Остановки" Click="btnStops_Click"></Button>
+        <Button x:Name="btnRoutes" Grid.Row="4" Content="Маршруты" Click="btnRoutes_Click"></Button>
+        <Button x:Name="btnStops" Grid.Row="5" Content="Остановки" Click="btnStops_Click"></Button>
     </Grid>
 </Page>

@@ -28,7 +28,6 @@ namespace AutoTrans.WPF.Pages
         public UsersPage()
         {
             InitializeComponent();
-            dgUsers.ItemsSource = Global.DB.Users.ToList();
         }
 
         /// <summary>
@@ -42,8 +41,6 @@ namespace AutoTrans.WPF.Pages
 
             if (user == null) return;
             Global.MainFrame.Navigate(new UserPage(user));
-            Global.DB.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-            dgUsers.ItemsSource = Global.DB.Users.ToList();
 
             if(user.ID == Global.MyUser.ID) Global.MyUser = user;
         }
@@ -65,9 +62,6 @@ namespace AutoTrans.WPF.Pages
 
             Global.DB.Users.RemoveRange(selectedUsers);
             Global.DB.SaveChanges();
-
-            Global.DB.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-            dgUsers.ItemsSource = Global.DB.Users.ToList();
         }
 
         /// <summary>
@@ -78,6 +72,15 @@ namespace AutoTrans.WPF.Pages
         private void btnAddUser_Click(object sender, RoutedEventArgs e)
         {
             Global.MainFrame.Navigate(new UserPage());
+        }
+
+        /// <summary>
+        /// Обработчик обновления данных.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
             Global.DB.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             dgUsers.ItemsSource = Global.DB.Users.ToList();
         }

@@ -69,21 +69,24 @@ namespace AutoTrans.WPF.Pages
                 errors.AppendLine("Заполните фамилию.");
             if (String.IsNullOrWhiteSpace(tbLogin.Text))
                 errors.AppendLine("Заполните логин.");
-            if (String.IsNullOrWhiteSpace(tbGender.Text) || tbGender.Text.Length > 1)
-                errors.AppendLine("Заполните пол (1 символ).");
+            if (tbGender.Text != "M" && tbGender.Text != "F")
+                errors.AppendLine("Укажите пол (F или M).");
             if (String.IsNullOrWhiteSpace(pbPassword.Password))
                 errors.AppendLine("Заполните пароль.");
+            var userInDB = Global.DB.Users.FirstOrDefault(u => u.ID != currentUser.ID && u.Login == currentUser.Login);
+            if (userInDB != null)
+                errors.AppendLine("Логин не уникален.");
 
             currentUser.Password = pbPassword.Password;
 
-            if(currentUser.ID == 0)
-                Global.DB.Users.Add(currentUser);
-
-            if(errors.Length != 0)
+            if (errors.Length != 0)
             {
                 MessageBox.Show("Проверьте поля.\n" + errors, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+
+            if (currentUser.ID == 0)
+                Global.DB.Users.Add(currentUser);
 
             Global.DB.SaveChanges();
         }

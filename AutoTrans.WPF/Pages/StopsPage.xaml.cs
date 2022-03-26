@@ -44,8 +44,6 @@ namespace AutoTrans.WPF.Pages
             if (stop == null) return;
 
             Global.MainFrame.Navigate(new StopPage(stop));
-            Global.DB.ChangeTracker.Entries().ToList().ForEach(s => s.Reload());
-            dgStops.ItemsSource = Global.DB.Stops.ToList();
         }
         
         /// <summary>
@@ -56,8 +54,6 @@ namespace AutoTrans.WPF.Pages
         private void btnAddStop_Click(object sender, RoutedEventArgs e)
         {
             Global.MainFrame.Navigate(new StopPage());
-            Global.DB.ChangeTracker.Entries().ToList().ForEach(s => s.Reload());
-            dgStops.ItemsSource = Global.DB.Stops.ToList();
         }
 
         /// <summary>
@@ -77,7 +73,15 @@ namespace AutoTrans.WPF.Pages
 
             Global.DB.Stops.RemoveRange(stops);
             Global.DB.SaveChanges();
+        }
 
+        /// <summary>
+        /// Обработчик обновления данных.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
             Global.DB.ChangeTracker.Entries().ToList().ForEach(s => s.Reload());
             dgStops.ItemsSource = Global.DB.Stops.ToList();
         }

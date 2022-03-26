@@ -82,15 +82,22 @@ namespace AutoTrans.WPF.Pages
         /// <param name="e"></param>
         private void cbTypeTransport_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (cbTypeTransport.SelectedItem == null) return;
+            if (e.Source == null)
+                return;
 
+            var typeTransport = cbTypeTransport.SelectedItem as TypesTransport;
             var manufactuter = cbManufacturer.SelectedItem as Manufacrurer;
             var model = cbModel.SelectedItem as Model;
-            var typeTransport = cbTypeTransport.SelectedItem as TypesTransport;
 
             if (manufactuter == null)
             {
                 cbModel.ItemsSource = null;
+                return;
+            }
+
+            if (typeTransport == null)
+            {
+                cbModel.ItemsSource = Global.DB.Models.Where(m => m.Manufacrurer.ID == manufactuter.ID).ToList();
                 return;
             }
 
@@ -156,7 +163,37 @@ namespace AutoTrans.WPF.Pages
         /// <param name="e"></param>
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            StringBuilder errors = new StringBuilder();
 
+            if (cbCity.SelectedItem == null)
+                errors.AppendLine("Выберите город.");
+            if (cbDriver.SelectedItem == null)
+                errors.AppendLine("Выберите водителя.");
+            if (cbManufacturer.SelectedItem == null)
+                errors.AppendLine("Выберите производителя транспорта.");
+            if (cbModel.SelectedItem == null)
+                errors.AppendLine("Выберите модель транспорта.");
+            if (cbRoute.SelectedItem == null)
+                errors.AppendLine("Выберите маршрут.");
+            if (cbTypeTransport.SelectedItem == null)
+                errors.AppendLine("Выберите тип транспорта.");
+            if (String.IsNullOrWhiteSpace(tbRegistrationMark.Text))
+                errors.AppendLine("Укажите регистрационный знак.");
+            if (String.IsNullOrWhiteSpace(tbVIN.Text))
+                errors.AppendLine("Укажите VIN транспорта.");
+            if (currentTransport.ProductionYear == null || currentTransport.ProductionYear == 0)
+                errors.AppendLine("Укажите год производства.");
+
+            if(errors.Length != 0)
+            {
+                MessageBox.Show("Исправьте ошибки.\n" + errors.ToString(), "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if(currentTransport.ID == 0)
+                Global.DB.Transports.Add(currentTransport);
+
+            Global.DB.SaveChanges();
         }
     }
 }

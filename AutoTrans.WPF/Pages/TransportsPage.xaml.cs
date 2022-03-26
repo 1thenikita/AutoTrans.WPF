@@ -1,4 +1,5 @@
-﻿using AutoTrans.WPF.Classes;
+﻿using AutoTrans.DB.Entities;
+using AutoTrans.WPF.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,8 +28,20 @@ namespace AutoTrans.WPF.Pages
         public TransportsPage()
         {
             InitializeComponent();
+        }
 
-            dgTransports.ItemsSource = Global.DB.Transports.ToList();
+        /// <summary>
+        /// Обработчик изменения транспорта.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnGoToTransport_Click(object sender, RoutedEventArgs e)
+        {
+            var transport = (sender as Button).DataContext as Transport;
+
+            if (transport == null) return;
+
+            Global.MainFrame.Navigate(new TransportPage(transport));
         }
 
         /// <summary>
@@ -39,6 +52,17 @@ namespace AutoTrans.WPF.Pages
         private void btnAddTransport_Click(object sender, RoutedEventArgs e)
         {
             Global.MainFrame.Navigate(new TransportPage());
+        }
+
+        /// <summary>
+        /// Обработчик обновления данных.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            Global.DB.ChangeTracker.Entries().ToList().ForEach(r => r.Reload());
+            dgTransports.ItemsSource = Global.DB.Transports.ToList();
         }
     }
 }

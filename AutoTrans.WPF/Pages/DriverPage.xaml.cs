@@ -64,8 +64,8 @@ namespace AutoTrans.WPF.Pages
                 errors.AppendLine("Заполните имя.");
             if (currentDriver.City == null)
                 errors.AppendLine("Заполните город.");
-            if(currentDriver.Gender.Length > 1 || String.IsNullOrWhiteSpace(currentDriver.Gender))
-                errors.AppendLine("Укажите пол.");
+            if (tbGender.Text != "M" && tbGender.Text != "F")
+                errors.AppendLine("Укажите пол (F или M).");
 
             if(errors.Length != 0)
             {

@@ -28,8 +28,6 @@ namespace AutoTrans.WPF.Pages
         public DriversPage()
         {
             InitializeComponent();
-
-            dgDrivers.ItemsSource = Global.DB.Drivers.ToList();
         }
 
         /// <summary>
@@ -43,9 +41,6 @@ namespace AutoTrans.WPF.Pages
             if (driver == null) return;
 
             Global.MainFrame.Navigate(new DriverPage(driver));
-
-            Global.DB.ChangeTracker.Entries().ToList().ForEach(r => r.Reload());
-            dgDrivers.ItemsSource = Global.DB.Drivers.ToList();
         }
 
         /// <summary>
@@ -56,9 +51,6 @@ namespace AutoTrans.WPF.Pages
         private void btnAddDriver_Click(object sender, RoutedEventArgs e)
         {
             Global.MainFrame.Navigate(new DriverPage());
-
-            Global.DB.ChangeTracker.Entries().ToList().ForEach(r => r.Reload());
-            dgDrivers.ItemsSource = Global.DB.Drivers.ToList();
         }
 
         /// <summary>
@@ -77,7 +69,15 @@ namespace AutoTrans.WPF.Pages
 
             Global.DB.Drivers.RemoveRange(drivers);
             Global.DB.SaveChanges();
+        }
 
+        /// <summary>
+        /// Обработчик обновления даннных.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
             Global.DB.ChangeTracker.Entries().ToList().ForEach(r => r.Reload());
             dgDrivers.ItemsSource = Global.DB.Drivers.ToList();
         }
