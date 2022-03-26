@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:AutoTrans.WPF"
         mc:Ignorable="d"
         Title="Пассажиравтотранс" Height="750" Width="900"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded"
+        MinHeight="750" MinWidth="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
