@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:AutoTrans.WPF.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Маршруты">
+      Title="Маршруты"
+      IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -29,5 +30,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+
+        <Button x:Name="btnAdd" Content="Добавить маршрут" Grid.Row="1" HorizontalAlignment="Left" Click="btnAdd_Click"/>
     </Grid>
 </Page>
