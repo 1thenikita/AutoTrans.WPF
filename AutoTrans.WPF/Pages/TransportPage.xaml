@@ -28,13 +28,13 @@
         </Grid.RowDefinitions>
 
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Content="Производитель"/>
-        <ComboBox x:Name="cbManufacturer" DisplayMemberPath="Name" SelectedItem="{Binding Model.Manufacturer}" Grid.Row="0" Grid.Column="1" SelectionChanged="cbManufacturer_SelectionChanged"/>
+        <ComboBox x:Name="cbManufacturer" DisplayMemberPath="Name" SelectedItem="{Binding Manufacturer}" Grid.Row="0" Grid.Column="1" SelectionChanged="cbManufacturer_SelectionChanged"/>
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Content="Модель"/>
         <ComboBox x:Name="cbModel" DisplayMemberPath="Name" SelectedItem="{Binding Model}" Grid.Row="1" Grid.Column="1" SelectionChanged="cbModel_SelectionChanged"/>
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Content="Тип транспорта"/>
         <ComboBox x:Name="cbTypeTransport" DisplayMemberPath="Name" SelectedItem="{Binding TypesTransport}" Grid.Row="2" Grid.Column="1" SelectionChanged="cbTypeTransport_SelectionChanged"/>
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Content="Год производства"/>
-        <TextBox x:Name="tbYear" Text="{Binding Year}" Grid.Row="3" Grid.Column="1"/>
+        <TextBox x:Name="tbYear" Text="{Binding ProductionYear}" Grid.Row="3" Grid.Column="1"/>
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Content="Регистрационный знак"/>
         <TextBox x:Name="tbRegistrationMark" Text="{Binding RegistrationMark}" Grid.Row="4" Grid.Column="1"/>
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="5" Content="Город"/>

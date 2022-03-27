@@ -22,6 +22,7 @@ namespace AutoTrans.WPF.Pages
     /// </summary>
     public partial class TransportPage : Page
     {
+        List<Manufacrurer> manufacrurers;
         Transport currentTransport;
 
         /// <summary>
@@ -31,7 +32,9 @@ namespace AutoTrans.WPF.Pages
         {
             InitializeComponent();
 
-            cbManufacturer.ItemsSource = Global.DB.Manufacrurers.ToList();
+            manufacrurers = Global.DB.Manufacrurers.ToList();
+
+            cbManufacturer.ItemsSource = manufacrurers;
             cbTypeTransport.ItemsSource = Global.DB.TypesTransports.ToList();
             cbDriver.ItemsSource = Global.DB.Drivers.ToList();
             cbCity.ItemsSource = Global.DB.Cities.ToList();
@@ -39,6 +42,8 @@ namespace AutoTrans.WPF.Pages
 
             currentTransport = new Transport();
             DataContext = currentTransport;
+
+            cbModel.IsEnabled = false;
         }
 
         /// <summary>
@@ -49,7 +54,9 @@ namespace AutoTrans.WPF.Pages
         {
             InitializeComponent();
 
-            cbManufacturer.ItemsSource = Global.DB.Manufacrurers.ToList();
+            manufacrurers = Global.DB.Manufacrurers.ToList();
+
+            cbManufacturer.ItemsSource = manufacrurers;
             cbTypeTransport.ItemsSource = Global.DB.TypesTransports.ToList();
             cbDriver.ItemsSource = Global.DB.Drivers.ToList();
             cbCity.ItemsSource = Global.DB.Cities.ToList();
@@ -58,6 +65,7 @@ namespace AutoTrans.WPF.Pages
             currentTransport = transport;
             DataContext = currentTransport;
         }
+
         /// <summary>
         /// Обработчик изменения производителя.
         /// </summary>
@@ -65,43 +73,21 @@ namespace AutoTrans.WPF.Pages
         /// <param name="e"></param>
         private void cbManufacturer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var manufactuter = cbManufacturer.SelectedItem as Manufacrurer;
-            if (manufactuter == null)
-            {
-                cbModel.ItemsSource = null;
-                return;
-            }
-            cbModel.ItemsSource = Global.DB.Models.Where(m => m.Manufacrurer.ID == manufactuter.ID).ToList();
-            cbTypeTransport.SelectedItem = null;
-        }
-
-        /// <summary>
-        /// Обработчик изменения типа транспорта.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cbTypeTransport_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (e.Source == null)
-                return;
-
+            var manufacturer = cbManufacturer.SelectedItem as Manufacrurer;
             var typeTransport = cbTypeTransport.SelectedItem as TypesTransport;
-            var manufactuter = cbManufacturer.SelectedItem as Manufacrurer;
-            var model = cbModel.SelectedItem as Model;
-
-            if (manufactuter == null)
+            if (manufacturer == null)
+                return;
+            
+            if(typeTransport!= null)
             {
-                cbModel.ItemsSource = null;
+                cbModel.ItemsSource = Global.DB.Models.Where(m => m.Manufacrurer.ID == manufacturer.ID && m.TypesTransport.ID == typeTransport.ID).ToList();
                 return;
             }
-
-            if (typeTransport == null)
-            {
-                cbModel.ItemsSource = Global.DB.Models.Where(m => m.Manufacrurer.ID == manufactuter.ID).ToList();
-                return;
-            }
-
-            cbModel.ItemsSource = Global.DB.Models.Where(m => m.TypesTransport.ID == typeTransport.ID && m.Manufacrurer.ID == manufactuter.ID).ToList();
+            
+            cbModel.ItemsSource = Global.DB.Models.Where(m => m.Manufacrurer.ID == manufacturer.ID).ToList();
+            if (cbModel.Items.Count == 0) return;
+            cbModel.SelectedIndex = 1;
+            cbManufacturer.SelectedItem = manufacturer;
         }
 
         /// <summary>
@@ -111,11 +97,26 @@ namespace AutoTrans.WPF.Pages
         /// <param name="e"></param>
         private void cbModel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var model = cbModel.SelectedItem as Model;
+            //var model = cbModel.SelectedItem as Model;
+            //if (model == null) return;
 
-            if (model == null) return;
+            //cbManufacturer.SelectedItem = model.Manufacrurer;
+            //cbTypeTransport.SelectedItem = model.TypesTransport;
+        }
 
-            cbTypeTransport.SelectedItem = model.TypesTransport;
+        /// <summary>
+        /// Обработчик изменения типа транспорта.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbTypeTransport_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var typeTransport = cbTypeTransport.SelectedItem as TypesTransport;
+            var manufactuter = cbManufacturer.SelectedItem as Manufacrurer;
+
+            if (typeTransport == null || manufactuter == null) return;
+            cbModel.ItemsSource = Global.DB.Models.Where(m => m.Manufacrurer.ID == manufactuter.ID && m.TypesTransport.ID == typeTransport.ID).ToList();
+            cbModel.IsEnabled = true;
         }
 
         /// <summary>
@@ -173,8 +174,6 @@ namespace AutoTrans.WPF.Pages
                 errors.AppendLine("Выберите производителя транспорта.");
             if (cbModel.SelectedItem == null)
                 errors.AppendLine("Выберите модель транспорта.");
-            if (cbRoute.SelectedItem == null)
-                errors.AppendLine("Выберите маршрут.");
             if (cbTypeTransport.SelectedItem == null)
                 errors.AppendLine("Выберите тип транспорта.");
             if (String.IsNullOrWhiteSpace(tbRegistrationMark.Text))
