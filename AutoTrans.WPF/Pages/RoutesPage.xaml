@@ -24,7 +24,14 @@
                 <DataGridTemplateColumn Header="Изменить маршрут" Width="150">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="btnGoToRoute" Content="Изменить маршрут" Click="btnGoToRoute_Click"></Button>
+                            <Button x:Name="btnGoToRoute" Content="Изменить маршрут" Click="btnGoToRoute_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Изменить остановки" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnGoToStops" Content="Изменить остановки" Click="btnGoToStops_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

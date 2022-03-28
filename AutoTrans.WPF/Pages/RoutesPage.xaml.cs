@@ -66,5 +66,19 @@ namespace AutoTrans.WPF.Pages
         {
             Global.MainFrame.Navigate(new RoutePage());
         }
+
+        /// <summary>
+        /// Обработчик изменения остановок у маршрута.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnGoToStops_Click(object sender, RoutedEventArgs e)
+        {
+            var route = (sender as Button).DataContext as Route;
+            if (route == null)
+                return;
+
+            Global.MainFrame.Navigate(new StopsInRoutePage(route));
+        }
     }
 }

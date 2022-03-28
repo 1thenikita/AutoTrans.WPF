@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\App.xaml
-13-1611317633
+14-2093214915
 
-18-212832284
+19-1559493882
 20-965129116
-MainWindow.xaml;Pages\AuthPage.xaml;Pages\DriverPage.xaml;Pages\DriversPage.xaml;Pages\MenuPage.xaml;Pages\RoutePage.xaml;Pages\RoutesPage.xaml;Pages\StopPage.xaml;Pages\StopsPage.xaml;Pages\TransportPage.xaml;Pages\TransportsPage.xaml;Pages\UserPage.xaml;Pages\UsersPage.xaml;
+MainWindow.xaml;Pages\AuthPage.xaml;Pages\DriverPage.xaml;Pages\DriversPage.xaml;Pages\MenuPage.xaml;Pages\RoutePage.xaml;Pages\RoutesPage.xaml;Pages\StopPage.xaml;Pages\StopsInRoutePage.xaml;Pages\StopsPage.xaml;Pages\TransportPage.xaml;Pages\TransportsPage.xaml;Pages\UserPage.xaml;Pages\UsersPage.xaml;
 
 False
 

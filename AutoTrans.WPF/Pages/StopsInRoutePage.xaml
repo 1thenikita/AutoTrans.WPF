@@ -1,0 +1,49 @@
+﻿<Page x:Class="AutoTrans.WPF.Pages.StopsInRoutePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AutoTrans.WPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Остановки в маршруте">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="250"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblRouteName" Content="Маршрут: "></Label>
+        
+        <DataGrid x:Name="dgStops" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название остановки" Binding="{Binding Stop.Name}" Width="150"/>
+                <DataGridTextColumn Header="Позиция остановки в маршруте" Binding="{Binding Position}" Width="200"/>
+                <DataGridTemplateColumn Header="Действия с остановкой" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="btnUpStop" Content="Поднять на позицию" Click="btnUpStop_Click"/>
+                                <Button x:Name="btnDownStop" Content="Опустить на позицию" Click="btnDownStop_Click"/>
+                                <Button x:Name="btnDeleteStop" Content="Удалить" Click="btnDeleteStop_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Vertical" Grid.Row="2">
+            <StackPanel Orientation="Horizontal" Grid.Row="2">
+                <Label Content="Остановка: "/>
+                <ComboBox x:Name="cbStops" DisplayMemberPath="Name" SelectedItem="{Binding Route}"/>
+                <Button x:Name="btnAddLastRoute" Width="220" Content="Добавить остановку на посл. позицию" Click="btnAddLastRoute_Click"/>
+                <Button x:Name="btnAddFirstRoute" Width="220" Content="Добавить остановку на перв. позицию" Click="btnAddFirstRoute_Click"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2"></StackPanel>
+        </StackPanel>
+        <Button x:Name="btnSave" Content="Сохранить" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="2" Click="btnSave_Click"/>
+    </Grid>
+</Page>

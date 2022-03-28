@@ -107,6 +107,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\StopsInRoutePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\StopsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -149,6 +153,9 @@
     </Compile>
     <Compile Include="Pages\StopPage.xaml.cs">
       <DependentUpon>StopPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StopsInRoutePage.xaml.cs">
+      <DependentUpon>StopsInRoutePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\StopsPage.xaml.cs">
       <DependentUpon>StopsPage.xaml</DependentUpon>

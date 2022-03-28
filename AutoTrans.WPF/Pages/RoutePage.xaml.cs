@@ -34,6 +34,9 @@ namespace AutoTrans.WPF.Pages
             cbCity.ItemsSource = Global.DB.Cities.ToList();
             cbTypeRoute.ItemsSource = Global.DB.TypesRoutes.ToList();
 
+            dpStart.DisplayDateStart = DateTime.Now;
+            dpEnd.DisplayDateStart = DateTime.Now;
+
             currentRoute = new Route();
             DataContext = currentRoute;
         }
@@ -48,6 +51,9 @@ namespace AutoTrans.WPF.Pages
 
             cbCity.ItemsSource = Global.DB.Cities.ToList();
             cbTypeRoute.ItemsSource = Global.DB.TypesRoutes.ToList();
+
+            dpStart.DisplayDateStart = DateTime.Now;
+            dpEnd.DisplayDateStart = DateTime.Now;
 
             currentRoute = route;
             DataContext = currentRoute;
@@ -66,7 +72,7 @@ namespace AutoTrans.WPF.Pages
                 errors.AppendLine("Заполните номер маршрута.");
             if(currentRoute.City == null)
                 errors.AppendLine("Заполните город.");
-            if (currentRoute.DateEnd.Date > currentRoute.DateStart.Date)
+            if (currentRoute.DateEnd.Date < currentRoute.DateStart.Date)
                 errors.AppendLine("Дата завершения маршрута не может быть раньше даты начала маршрута.");
             if (currentRoute.Frequency == null || currentRoute.Frequency == 0)
                 errors.AppendLine("Укажите частоту хождения транспорта.");

@@ -290,6 +290,13 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:AutoTrans.WPF.Pages.RoutesPage.btnGoToStops_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик изменения остановок у маршрута.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoTrans.WPF.Pages.RoutesPage.InitializeComponent">
             <summary>
             InitializeComponent
@@ -322,6 +329,82 @@
             <param name="e"></param>
         </member>
         <member name="M:AutoTrans.WPF.Pages.StopPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoTrans.WPF.Pages.StopsInRoutePage">
+            <summary>
+            Логика взаимодействия для StopsInRoutePage.xaml
+            </summary>
+            <summary>
+            StopsInRoutePage
+            </summary>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsInRoutePage.#ctor(AutoTrans.DB.Entities.Route)">
+            <summary>
+            Обработчик изменения остановок в маршрутах
+            </summary>
+            <param name="route"></param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsInRoutePage.dgStops_UploadDates">
+            <summary>
+            Обработчик обновления данных.
+            </summary>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsInRoutePage.btnUpStop_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик поднятия остановки на позицию вверх.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsInRoutePage.btnDownStop_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик опускания остановки на позицию вниз.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsInRoutePage.btnDeleteStop_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик удаления остановки из остановок маршрута.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsInRoutePage.btnAddLastRoute_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик добавления остановки на последнюю позицию.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsInRoutePage.btnAddFirstRoute_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик добавления остановки на первую позицию.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsInRoutePage.cbStops_RemoveElements">
+            <summary>
+            Обработчик удаления остановок, которые имеются в остановках маршрута
+            </summary>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsInRoutePage.RecountStopsInRoute">
+            <summary>
+            Обработчик перерасчёта позиций остановок по порядку.
+            </summary>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsInRoutePage.btnSave_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик сохранения остановок
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoTrans.WPF.Pages.StopsInRoutePage.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>

@@ -30,9 +30,9 @@
         <Label Content="Город" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
         <ComboBox x:Name="cbCity" DisplayMemberPath="Name" SelectedValue="{Binding City}" Grid.Row="1" Grid.Column="1"/>
         <Label Content="Временное начало" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"/>
-        <DatePicker x:Name="dpStart" SelectedDate="{Binding DateStart}" Grid.Row="2" Grid.Column="1"/>
+        <DatePicker x:Name="dpStart" DisplayDate="{Binding DateStart}" SelectedDate="{Binding DateStart}" Grid.Row="2" Grid.Column="1"/>
         <Label Content="Временной конец" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0"/>
-        <DatePicker x:Name="dpEnd" SelectedDate="{Binding DateEnd}" Grid.Row="3" Grid.Column="1"/>
+        <DatePicker x:Name="dpEnd" DisplayDate="{Binding DateEnd}" SelectedDate="{Binding DateEnd}" Grid.Row="3" Grid.Column="1"/>
         <Label Content="Частота хождения" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0"/>
         <TextBox x:Name="tbFrequency" Text="{Binding Frequency}" Grid.Row="4" Grid.Column="1"/>
         <Label Content="Тип маршрута" VerticalAlignment="Center" Grid.Row="5" Grid.Column="0"/>
