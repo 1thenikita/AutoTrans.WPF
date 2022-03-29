@@ -90,5 +90,15 @@ namespace AutoTrans.WPF.Pages
 
             Global.DB.SaveChanges();
         }
+
+        /// <summary>
+        /// Обработчик изменения остановок.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnGoToStopsInRoute_Click(object sender, RoutedEventArgs e)
+        {
+            Global.MainFrame.Navigate(new StopsInRoutePage(currentRoute));
+        }
     }
 }

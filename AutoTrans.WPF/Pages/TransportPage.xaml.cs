@@ -22,7 +22,7 @@ namespace AutoTrans.WPF.Pages
     /// </summary>
     public partial class TransportPage : Page
     {
-        List<Manufacrurer> manufacrurers;
+        List<Manufacturer> manufacturers;
         Transport currentTransport;
 
         /// <summary>
@@ -32,9 +32,9 @@ namespace AutoTrans.WPF.Pages
         {
             InitializeComponent();
 
-            manufacrurers = Global.DB.Manufacrurers.ToList();
+            manufacturers = Global.DB.Manufacturers.ToList();
 
-            cbManufacturer.ItemsSource = manufacrurers;
+            cbManufacturer.ItemsSource = manufacturers;
             cbTypeTransport.ItemsSource = Global.DB.TypesTransports.ToList();
             cbDriver.ItemsSource = Global.DB.Drivers.ToList();
             cbCity.ItemsSource = Global.DB.Cities.ToList();
@@ -54,9 +54,9 @@ namespace AutoTrans.WPF.Pages
         {
             InitializeComponent();
 
-            manufacrurers = Global.DB.Manufacrurers.ToList();
+            manufacturers = Global.DB.Manufacturers.ToList();
 
-            cbManufacturer.ItemsSource = manufacrurers;
+            cbManufacturer.ItemsSource = manufacturers;
             cbTypeTransport.ItemsSource = Global.DB.TypesTransports.ToList();
             cbDriver.ItemsSource = Global.DB.Drivers.ToList();
             cbCity.ItemsSource = Global.DB.Cities.ToList();
@@ -64,6 +64,9 @@ namespace AutoTrans.WPF.Pages
 
             currentTransport = transport;
             DataContext = currentTransport;
+
+            cbManufacturer.SelectedItem = currentTransport.Model.Manufacturer;
+            cbTypeTransport.SelectedItem = currentTransport.Model.TypesTransport;
         }
 
         /// <summary>
@@ -73,18 +76,18 @@ namespace AutoTrans.WPF.Pages
         /// <param name="e"></param>
         private void cbManufacturer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var manufacturer = cbManufacturer.SelectedItem as Manufacrurer;
+            var manufacturer = cbManufacturer.SelectedItem as Manufacturer;
             var typeTransport = cbTypeTransport.SelectedItem as TypesTransport;
             if (manufacturer == null)
                 return;
             
             if(typeTransport!= null)
             {
-                cbModel.ItemsSource = Global.DB.Models.Where(m => m.Manufacrurer.ID == manufacturer.ID && m.TypesTransport.ID == typeTransport.ID).ToList();
+                cbModel.ItemsSource = Global.DB.Models.Where(m => m.Manufacturer.ID == manufacturer.ID && m.TypesTransport.ID == typeTransport.ID).ToList();
                 return;
             }
             
-            cbModel.ItemsSource = Global.DB.Models.Where(m => m.Manufacrurer.ID == manufacturer.ID).ToList();
+            cbModel.ItemsSource = Global.DB.Models.Where(m => m.Manufacturer.ID == manufacturer.ID).ToList();
             if (cbModel.Items.Count == 0) return;
             cbModel.SelectedIndex = 1;
             cbManufacturer.SelectedItem = manufacturer;
@@ -112,10 +115,10 @@ namespace AutoTrans.WPF.Pages
         private void cbTypeTransport_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var typeTransport = cbTypeTransport.SelectedItem as TypesTransport;
-            var manufactuter = cbManufacturer.SelectedItem as Manufacrurer;
+            var manufacturer = cbManufacturer.SelectedItem as Manufacturer;
 
-            if (typeTransport == null || manufactuter == null) return;
-            cbModel.ItemsSource = Global.DB.Models.Where(m => m.Manufacrurer.ID == manufactuter.ID && m.TypesTransport.ID == typeTransport.ID).ToList();
+            if (typeTransport == null || manufacturer == null) return;
+            cbModel.ItemsSource = Global.DB.Models.Where(m => m.Manufacturer.ID == manufacturer.ID && m.TypesTransport.ID == typeTransport.ID).ToList();
             cbModel.IsEnabled = true;
         }
 
@@ -154,7 +157,11 @@ namespace AutoTrans.WPF.Pages
         {
             var route = cbRoute.SelectedItem as Route;
             if(route == null) return;
-            lblRouteName.Content = route.StopsInRoutes.FirstOrDefault(st => st.Position == 0).Stop.Name + " - " + route.StopsInRoutes.FirstOrDefault(st => st.Position == -1).Stop.Name;
+            var nameRoute = route.StopsInRoutes.OrderBy(st => st.Position).FirstOrDefault().Stop.Name + " - " + route.StopsInRoutes.OrderBy(st => st.Position).LastOrDefault().Stop.Name;
+            if (nameRoute != null)
+                lblRouteName.Content = nameRoute;
+            else
+                lblRouteName.Content = "Неуказаны остановки.";
         }
 
         /// <summary>
@@ -168,8 +175,6 @@ namespace AutoTrans.WPF.Pages
 
             if (cbCity.SelectedItem == null)
                 errors.AppendLine("Выберите город.");
-            if (cbDriver.SelectedItem == null)
-                errors.AppendLine("Выберите водителя.");
             if (cbManufacturer.SelectedItem == null)
                 errors.AppendLine("Выберите производителя транспорта.");
             if (cbModel.SelectedItem == null)

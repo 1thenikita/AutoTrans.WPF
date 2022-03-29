@@ -12,10 +12,10 @@ namespace AutoTrans.DB.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Manufacrurer
+    public partial class Manufacturer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Manufacrurer()
+        public Manufacturer()
         {
             this.Models = new HashSet<Model>();
         }

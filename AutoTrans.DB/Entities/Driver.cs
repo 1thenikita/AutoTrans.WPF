@@ -14,6 +14,12 @@ namespace AutoTrans.DB.Entities
     
     public partial class Driver
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Driver()
+        {
+            this.Transports = new HashSet<Transport>();
+        }
+    
         public int ID { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
@@ -22,5 +28,7 @@ namespace AutoTrans.DB.Entities
         public int CityID { get; set; }
     
         public virtual City City { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Transport> Transports { get; set; }
     }
 }

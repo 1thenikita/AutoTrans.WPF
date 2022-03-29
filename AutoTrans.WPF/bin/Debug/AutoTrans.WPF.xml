@@ -251,6 +251,13 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:AutoTrans.WPF.Pages.RoutePage.btnGoToStopsInRoute_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик изменения остановок.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoTrans.WPF.Pages.RoutePage.InitializeComponent">
             <summary>
             InitializeComponent

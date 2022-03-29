@@ -72,7 +72,7 @@
     <Compile Include="Entities\Driver.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Manufacrurer.cs">
+    <Compile Include="Entities\Manufacturer.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Model.cs">

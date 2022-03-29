@@ -19,7 +19,7 @@
     <Property Name="Gender" Type="char" MaxLength="1" Nullable="false" />
     <Property Name="CityID" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="Manufacrurers">
+  <EntityType Name="Manufacturers">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
@@ -144,12 +144,12 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ModelsTransport_ManufacrurersTransport">
-    <End Role="Manufacrurers" Type="Self.Manufacrurers" Multiplicity="1">
+    <End Role="Manufacturers" Type="Self.Manufacturers" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
     <End Role="Models" Type="Self.Models" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Manufacrurers">
+      <Principal Role="Manufacturers">
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="Models">
@@ -267,6 +267,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Transports_Drivers">
+    <End Role="Drivers" Type="Self.Drivers" Multiplicity="0..1" />
+    <End Role="Transports" Type="Self.Transports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drivers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Transports">
+        <PropertyRef Name="DriverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Transports_ModelsTransport">
     <End Role="Models" Type="Self.Models" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -278,6 +290,18 @@
       </Principal>
       <Dependent Role="Transports">
         <PropertyRef Name="ModelD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transports_Routes">
+    <End Role="Routes" Type="Self.Routes" Multiplicity="0..1" />
+    <End Role="Transports" Type="Self.Transports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Routes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Transports">
+        <PropertyRef Name="RouteID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -312,7 +336,7 @@
   <EntityContainer Name="Хранилище DBModelContainer">
     <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Drivers" EntityType="Self.Drivers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Manufacrurers" EntityType="Self.Manufacrurers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manufacturers" EntityType="Self.Manufacturers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Models" EntityType="Self.Models" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Routes" EntityType="Self.Routes" Schema="dbo" store:Type="Tables" />
@@ -328,7 +352,7 @@
       <End Role="Drivers" EntitySet="Drivers" />
     </AssociationSet>
     <AssociationSet Name="FK_ModelsTransport_ManufacrurersTransport" Association="Self.FK_ModelsTransport_ManufacrurersTransport">
-      <End Role="Manufacrurers" EntitySet="Manufacrurers" />
+      <End Role="Manufacturers" EntitySet="Manufacturers" />
       <End Role="Models" EntitySet="Models" />
     </AssociationSet>
     <AssociationSet Name="FK_ModelsTransport_TypesTransport" Association="Self.FK_ModelsTransport_TypesTransport">
@@ -363,8 +387,16 @@
       <End Role="Cities" EntitySet="Cities" />
       <End Role="Transports" EntitySet="Transports" />
     </AssociationSet>
+    <AssociationSet Name="FK_Transports_Drivers" Association="Self.FK_Transports_Drivers">
+      <End Role="Drivers" EntitySet="Drivers" />
+      <End Role="Transports" EntitySet="Transports" />
+    </AssociationSet>
     <AssociationSet Name="FK_Transports_ModelsTransport" Association="Self.FK_Transports_ModelsTransport">
       <End Role="Models" EntitySet="Models" />
+      <End Role="Transports" EntitySet="Transports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transports_Routes" Association="Self.FK_Transports_Routes">
+      <End Role="Routes" EntitySet="Routes" />
       <End Role="Transports" EntitySet="Transports" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Cities" Association="Self.FK_Users_Cities">

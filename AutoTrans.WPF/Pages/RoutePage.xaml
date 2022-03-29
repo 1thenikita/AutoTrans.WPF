@@ -39,5 +39,6 @@
         <ComboBox x:Name="cbTypeRoute" DisplayMemberPath="Name" SelectedValue="{Binding TypesRoute}" Grid.Row="5" Grid.Column="1"/>
 
         <Button x:Name="btnSave" Content="Сохранить" Grid.Row="7" Grid.ColumnSpan="2" Click="btnSave_Click"/>
+        <Button x:Name="btnGoToStopsInRoute" Content="Изменить остановки" Grid.Row="7" Grid.ColumnSpan="1" Click="btnGoToStopsInRoute_Click"/>
     </Grid>
 </Page>

@@ -25,5 +25,7 @@ namespace AutoTrans.DB.Entities
     
         public virtual City City { get; set; }
         public virtual Model Model { get; set; }
+        public virtual Driver Driver { get; set; }
+        public virtual Route Route { get; set; }
     }
 }

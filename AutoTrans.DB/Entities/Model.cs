@@ -27,7 +27,7 @@ namespace AutoTrans.DB.Entities
         public int CountDisabledPassangers { get; set; }
         public int TypeTransportID { get; set; }
     
-        public virtual Manufacrurer Manufacrurer { get; set; }
+        public virtual Manufacturer Manufacturer { get; set; }
         public virtual TypesTransport TypesTransport { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transport> Transports { get; set; }

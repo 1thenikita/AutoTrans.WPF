@@ -27,7 +27,7 @@ namespace AutoTrans.DB.Entities
     
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Driver> Drivers { get; set; }
-        public virtual DbSet<Manufacrurer> Manufacrurers { get; set; }
+        public virtual DbSet<Manufacturer> Manufacturers { get; set; }
         public virtual DbSet<Model> Models { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Route> Routes { get; set; }

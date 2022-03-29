@@ -26,8 +26,8 @@ namespace AutoTrans.DB.Entities
         public int CityID { get; set; }
         public string GeoPosition { get; set; }
     
+        public virtual City City { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StopsInRoute> StopsInRoutes { get; set; }
-        public virtual City City { get; set; }
     }
 }

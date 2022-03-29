@@ -11,3 +11,4 @@ C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\obj\Debug
 C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\obj\Debug\AutoTrans.DB.csproj.CopyComplete
 C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\obj\Debug\AutoTrans.DB.dll
 C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\obj\Debug\AutoTrans.DB.pdb
+C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.DB\obj\Debug\AutoTrans.DB.csproj.AssemblyReference.cache

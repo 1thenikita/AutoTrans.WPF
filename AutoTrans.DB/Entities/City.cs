@@ -19,9 +19,9 @@ namespace AutoTrans.DB.Entities
         {
             this.Drivers = new HashSet<Driver>();
             this.Routes = new HashSet<Route>();
+            this.Stops = new HashSet<Stop>();
             this.Transports = new HashSet<Transport>();
             this.Users = new HashSet<User>();
-            this.Stops = new HashSet<Stop>();
         }
     
         public int ID { get; set; }
@@ -33,10 +33,10 @@ namespace AutoTrans.DB.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Route> Routes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Stop> Stops { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transport> Transports { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User> Users { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Stop> Stops { get; set; }
     }
 }

@@ -16,15 +16,21 @@
         </Grid.RowDefinitions>
         <DataGrid Name="dgTransports" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Производитель" Binding="{Binding Model.Manufacrurer.Name}" Width="125"></DataGridTextColumn>
+                <DataGridTextColumn Header="Производитель" Binding="{Binding Model.Manufacturer.Name}" Width="125"></DataGridTextColumn>
                 <DataGridTextColumn Header="Модель" Binding="{Binding Model.Name}" Width="100"></DataGridTextColumn>
                 <DataGridTextColumn Header="Тип" Binding="{Binding Model.TypesTransport.Name}" Width="100"></DataGridTextColumn>
                 <DataGridTextColumn Header="Год произв." Binding="{Binding ProductionYear}" Width="75"></DataGridTextColumn>
                 <DataGridTextColumn Header="Рег. знак" Binding="{Binding RegistrationMark}" Width="75"></DataGridTextColumn>
                 <DataGridTextColumn Header="Город" Binding="{Binding City.Name}" Width="100"></DataGridTextColumn>
-                <DataGridTextColumn Header="Фамилия вод." Binding="{Binding Driver.LastName}" Width="100"></DataGridTextColumn>
-                <DataGridTextColumn Header="Имя водителя" Binding="{Binding Driver.FirstName}" Width="100"></DataGridTextColumn>
-                <DataGridTextColumn Header="Номер рейса" Binding="{Binding Route.Number, TargetNullValue='Отсустсвует'}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="Водитель" Width="150">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1}">
+                            <Binding Path="Driver.LastName" FallbackValue="Отсутствует"></Binding>
+                            <Binding Path="Driver.FirstName" FallbackValue=""></Binding>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Номер рейса" Binding="{Binding Route.Number, FallbackValue=Отсустсвует}" Width="100"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="Изменить">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
