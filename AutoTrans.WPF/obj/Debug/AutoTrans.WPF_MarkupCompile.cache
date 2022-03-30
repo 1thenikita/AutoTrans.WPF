@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\
+c:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\obj\Debug\
 AutoTrans.WPF
 none
 false
 DEBUG;TRACE
-C:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\App.xaml
+c:\Users\nik-8\Documents\Work\Visual Studio\AutoTrans.WPF\AutoTrans.WPF\App.xaml
 14-2093214915
 
-19-1559493882
-20-965129116
+20362284239
+20-2069446652
 MainWindow.xaml;Pages\AuthPage.xaml;Pages\DriverPage.xaml;Pages\DriversPage.xaml;Pages\MenuPage.xaml;Pages\RoutePage.xaml;Pages\RoutesPage.xaml;Pages\StopPage.xaml;Pages\StopsInRoutePage.xaml;Pages\StopsPage.xaml;Pages\TransportPage.xaml;Pages\TransportsPage.xaml;Pages\UserPage.xaml;Pages\UsersPage.xaml;
 
-False
+True
 
