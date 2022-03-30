@@ -44,6 +44,7 @@ namespace AutoTrans.WPF.Pages
             DataContext = currentTransport;
 
             cbModel.IsEnabled = false;
+            this.Title = "Добавление транспорта";
         }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace AutoTrans.WPF.Pages
 
             cbManufacturer.SelectedItem = currentTransport.Model.Manufacturer;
             cbTypeTransport.SelectedItem = currentTransport.Model.TypesTransport;
+            this.Title = "Изменение транспорта";
         }
 
         /// <summary>
@@ -185,8 +187,8 @@ namespace AutoTrans.WPF.Pages
                 errors.AppendLine("Укажите регистрационный знак.");
             if (String.IsNullOrWhiteSpace(tbVIN.Text))
                 errors.AppendLine("Укажите VIN транспорта.");
-            if (currentTransport.ProductionYear == null || currentTransport.ProductionYear == 0)
-                errors.AppendLine("Укажите год производства.");
+            if (currentTransport.ProductionYear <= 1900 || currentTransport.ProductionYear > DateTime.Now.Year)
+                errors.AppendLine("Укажите правильный год производства.");
 
             if(errors.Length != 0)
             {

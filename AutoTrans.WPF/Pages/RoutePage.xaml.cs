@@ -39,6 +39,10 @@ namespace AutoTrans.WPF.Pages
 
             currentRoute = new Route();
             DataContext = currentRoute;
+
+            currentRoute.DateStart = DateTime.Now;
+            currentRoute.DateEnd = DateTime.Now;
+            this.Title = "Добавление маршрута";
         }
 
         /// <summary>
@@ -57,6 +61,7 @@ namespace AutoTrans.WPF.Pages
 
             currentRoute = route;
             DataContext = currentRoute;
+            this.Title = "Изменение маршрута";
         }
 
         /// <summary>

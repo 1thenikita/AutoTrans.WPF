@@ -41,10 +41,10 @@
         <ComboBox x:Name="cbCity" DisplayMemberPath="Name" SelectedItem="{Binding City}" Grid.Row="5" Grid.Column="1" SelectionChanged="cbCity_SelectionChanged"/>
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6" Content="Водитель"/>
         <ComboBox x:Name="cbDriver" DisplayMemberPath="LastName" SelectedItem="{Binding Driver}" Grid.Row="6" Grid.Column="1" SelectionChanged="cbDriver_SelectionChanged"/>
-        <Label x:Name="lblDriverFullName" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <Label x:Name="lblDriverFullName" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="7" Content="Рейс"/>
         <ComboBox x:Name="cbRoute" DisplayMemberPath="Number" SelectedItem="{Binding Route}" Grid.Row="7" Grid.Column="1" SelectionChanged="cbRoute_SelectionChanged"/>
-        <Label x:Name="lblRouteName" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <Label x:Name="lblRouteName" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="8" Content="VIN"/>
         <TextBox x:Name="tbVIN" Text="{Binding VIN}" Grid.Row="8" Grid.Column="1"/>
         <Button x:Name="btnSave" Content="Сохранить" Grid.Row="11" Grid.ColumnSpan="2" Click="btnSave_Click"/>

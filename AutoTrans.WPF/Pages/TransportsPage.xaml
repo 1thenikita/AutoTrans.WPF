@@ -42,5 +42,6 @@
         </DataGrid>
 
         <Button x:Name="btnAddTransport" Grid.Row="1" HorizontalAlignment="Left" Content="Добавить транспорт" Click="btnAddTransport_Click" />
+        <Button x:Name="btnRemoveTransport" Grid.Row="1" HorizontalAlignment="Right" Content="Удалить транспорт" Click="btnRemoveTransport_Click" />
     </Grid>
 </Page>

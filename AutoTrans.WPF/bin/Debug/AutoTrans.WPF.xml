@@ -569,6 +569,13 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:AutoTrans.WPF.Pages.TransportsPage.btnRemoveTransport_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Обработчик удаления данных.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoTrans.WPF.Pages.TransportsPage.InitializeComponent">
             <summary>
             InitializeComponent

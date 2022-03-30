@@ -33,6 +33,7 @@ namespace AutoTrans.WPF.Pages
             cbCity.ItemsSource = Global.DB.Cities.ToList(); 
             currentStop = new Stop();
             DataContext = currentStop;
+            this.Title = "Добавление остановки";
         }
 
         /// <summary>
@@ -46,6 +47,7 @@ namespace AutoTrans.WPF.Pages
             cbCity.ItemsSource = Global.DB.Cities.ToList();
             currentStop = stop;
             DataContext = currentStop;
+            this.Title = "Изменение остановки";
         }
 
         /// <summary>

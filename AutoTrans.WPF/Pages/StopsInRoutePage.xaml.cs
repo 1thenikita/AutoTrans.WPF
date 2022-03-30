@@ -119,6 +119,7 @@ namespace AutoTrans.WPF.Pages
 
             stopsInRoutes.Remove(stopInRoute);
 
+            cbStops_RemoveElements();
             RecountStopsInRoute();
         }
 
@@ -176,6 +177,8 @@ namespace AutoTrans.WPF.Pages
             {
                 if (stopsInCb.Contains(stopInRoute.Stop))
                     stopsInCb.Remove(stopInRoute.Stop);
+                else
+                    stopsInCb.Add(stopInRoute.Stop);
             }
 
             cbStops.ItemsSource = stopsInCb;

@@ -64,5 +64,26 @@ namespace AutoTrans.WPF.Pages
             Global.DB.ChangeTracker.Entries().ToList().ForEach(r => r.Reload());
             dgTransports.ItemsSource = Global.DB.Transports.ToList();
         }
+
+        /// <summary>
+        /// Обработчик удаления данных.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRemoveTransport_Click(object sender, RoutedEventArgs e)
+        {
+            var transports = dgTransports.SelectedItems as List<Transport>;
+            if (transports == null) return;
+
+            MessageBoxResult result = MessageBox.Show($"Вы действительно хотите удалить {transports.Count} предметов?", "Подтвердите", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.No) return;
+
+            Global.DB.Transports.RemoveRange(transports);
+            Global.DB.SaveChanges();
+
+            Global.DB.ChangeTracker.Entries().ToList().ForEach(r => r.Reload());
+            dgTransports.ItemsSource = Global.DB.Transports.ToList();
+        }
     }
 }
